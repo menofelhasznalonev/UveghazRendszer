@@ -49,6 +49,10 @@ namespace UveghazRendszer
 			else if (noveny == this.noveny)
 			{
 				this.egyedszam += egyedszam;
+				if (this.egyedszam > noveny.OptimalisSuruseg)
+				{
+					this.noveny.EgeszsegiAllapot -= 2;
+				}
 				return true;
 			}
 			else
@@ -58,5 +62,18 @@ namespace UveghazRendszer
 
 		}
 
+		public void Noveles(int egyedzam)
+		{
+			this.Beultet(this.noveny, egyedzam);
+		}
+		public void Csokkentes(int egyedSzam)
+		{
+			this.egyedszam -= egyedSzam;
+			if (this.egyedszam <= 0)
+			{
+				this.egyedszam = 0;
+				this.noveny = null;
+			}
+		}
 	}
 }
