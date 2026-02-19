@@ -8,5 +8,55 @@ namespace UveghazRendszer
 {
 	internal class Cella
 	{
+		Pozicio poz;
+		NovenyFaj noveny;
+		int egyedszam;
+		List<Riasztas> riasztasok;
+		List<Szenzor> szenzorok;
+
+		internal Pozicio Poz { get => poz; set => poz = value; }
+		internal NovenyFaj Noveny { get => noveny; set => noveny = value; }
+		public int Egyedszam { get => egyedszam; set => egyedszam = value; }
+		internal List<Riasztas> Riasztasok { get => riasztasok; set => riasztasok = value; }
+		internal List<Szenzor> Szenzorok { get => szenzorok; set => szenzorok = value; }
+
+		public Cella(Pozicio poz)
+		{
+			NovenyFaj noveny = null;
+			this.Poz = poz;
+			egyedszam = 0;
+			Riasztasok = new List<Riasztas>();
+			Szenzorok = new List<Szenzor>();
+		}
+
+
+		public bool UresCella
+		{
+			get {
+				return this.noveny == null;
+			}
+
+		}
+		public bool Beultet(NovenyFaj noveny, int egyedSzam)
+		{
+
+			if (this.UresCella)
+			{
+				this.noveny = noveny;
+				this.egyedszam = egyedszam;
+				return true;
+			}
+			else if (noveny == this.noveny)
+			{
+				this.egyedszam += egyedszam;
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+
 	}
 }
