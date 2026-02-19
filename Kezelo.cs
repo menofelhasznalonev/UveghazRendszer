@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,5 +9,25 @@ namespace UveghazRendszer
 {
 	internal class Kezelo
 	{
+		private string nev;
+		private string azonosito;
+		private Szerepkor szerepkor;
+
+		public Kezelo(string nev, string azonosito, Szerepkor szerepkor)
+		{
+			this.Nev = nev;
+			this.Azonosito = azonosito;
+			this.Szerepkor = szerepkor;
+		}
+
+		public string Nev { get => nev; set => nev = value; }
+		public string Azonosito { get => azonosito; set => azonosito = value; }
+		internal Szerepkor Szerepkor { get => szerepkor; set => szerepkor = value; }
+
+		public override string ToString()
+		{
+			return $"{this.Nev}: {this.Szerepkor}";
+		}
+	
 	}
 }

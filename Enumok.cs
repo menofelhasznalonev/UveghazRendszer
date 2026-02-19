@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace UveghazRendszer
 {
-	internal class NovenyFaj
-	{
-		private string nev;
-		private int id;
-		//private int;
 
+	enum Szerepkor
+	{
+		KERTESZ,
+		TECHNIKUS,
+		ADMIN
+	}
+
+
+
+	internal class Enumok
+	{
 	}
 }
