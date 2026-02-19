@@ -71,9 +71,14 @@ namespace UveghazRendszer
 			this.egyedszam -= egyedSzam;
 			if (this.egyedszam <= 0)
 			{
-				this.egyedszam = 0;
-				this.noveny = null;
+				this.Urit();
 			}
+		}
+
+		public void Urit()
+		{
+			this.egyedszam = 0;
+			this.noveny = null;
 		}
 	}
 }
