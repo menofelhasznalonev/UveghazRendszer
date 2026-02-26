@@ -80,5 +80,11 @@ namespace UveghazRendszer
 			this.egyedszam = 0;
 			this.noveny = null;
 		}
+
+		public override string ToString()
+		{
+			return $"{this.noveny.Nev} {this.egyedszam} db, Állapot: {this.Noveny.EgeszsegiAllapot}";
+		}
+
 	}
 }
