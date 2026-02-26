@@ -83,6 +83,7 @@ namespace UveghazRendszer
 
 		public override string ToString()
 		{
+			
 			return $"{this.noveny.Nev} {this.egyedszam} db, Állapot: {this.Noveny.EgeszsegiAllapot}";
 		}
 

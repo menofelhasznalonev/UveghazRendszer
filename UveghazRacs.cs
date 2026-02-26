@@ -91,5 +91,49 @@ namespace UveghazRendszer
 			kert[x - 1, y - 1].Csokkentes(mennyiseg);
 			Console.WriteLine($"{x},{y} ágyás növénye, a(z) {kert[x - 1, y - 1].Noveny.Nev} egyedszám: {kert[x - 1, y - 1].Egyedszam}");
 		}
+
+		public void Szomszedok(int x, int y)
+		{
+			if (x == 1)
+			{
+				Console.WriteLine("Nincs bal oldali szomszéd");
+			}
+			else
+			{
+				Console.WriteLine($"Bal oldali szomszéd: {kert[x-2, y-1].Noveny.Nev}");
+			}
+
+			if (x == meret)
+			{
+				Console.WriteLine("Nincs jobb oldali szomszéd");
+			}
+			else
+			{
+				Console.WriteLine($"Jobb oldali szomszéd: {kert[x, y - 1].Noveny.Nev}");
+			}
+
+			if (y == 1)
+			{
+				Console.WriteLine("Nincs felső szomszéd");
+			}
+			else
+			{
+				Console.WriteLine($"Felső szomszéd: {kert[x - 1, y - 2].Noveny.Nev}");
+			}
+
+			if (y == meret)
+			{
+				Console.WriteLine("Nincs alsó szomszéd");
+			}
+			else
+			{
+				if () {
+
+				}
+				Console.WriteLine($"Alsó szomszéd: {kert[x - 1, y].Noveny.Nev}");
+			}
+
+
+		}
 	}
 }
